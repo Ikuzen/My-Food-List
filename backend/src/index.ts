@@ -2,9 +2,12 @@ import express from 'express'
 import { Sequelize, Model, DataTypes } from 'sequelize'
 import bodyParser from 'body-parser'
 import { usersRouter } from './routes/users'
+import { config } from './config'
+
+const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_PORT } = config
 
 const sequelize = new Sequelize(
-  'postgresql://ml-specialist-python:ml-addict@localhost:5432/postgres',
+  `postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/postgres`,
 )
 
 try {
