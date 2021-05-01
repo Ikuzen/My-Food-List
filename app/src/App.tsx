@@ -1,16 +1,39 @@
 import * as React from 'react';
 import { render } from 'react-dom';
+import MainPage from './MainPage';
+import NavBarTop from './layout/Navbar-top'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import TestPage from './TestPage';
 
-import Counter from './Counter';
-class Body extends React.Component{
-    state = {
-        title : "Hello world"
+class Routes extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
-    render(){
-        return(
-            <h1>{this.state.title}</h1>
+
+    render() {
+        return (
+
+            <div>
+                <Router>
+                <NavBarTop />
+                    <div>
+                        <Switch>
+                            <Route path="/test" component={TestPage}/>
+                            <Route path="/" component={MainPage}/>
+                        </Switch>
+                    </div>
+                </Router>
+            </div>
         )
     }
 }
-render([<Body /> ,<Counter />], document.getElementById('main'));
+const App = () => (<Routes />)
+render([<Routes />], document.getElementById('main'));
+
+export default Routes
