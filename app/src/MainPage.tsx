@@ -1,13 +1,4 @@
 import * as React from 'react';
-import NavBarTop from './layout/Navbar-top';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import TestPage from './TestPage';
-
 
 type MyProps = { value: any };
 type MyState = { value: string, count: number };
@@ -28,6 +19,7 @@ export default class MainPage extends React.Component<MyProps, MyState> {
     alert('Le nom a été soumis : ' + this.state.value);
     event.preventDefault();
   }
+  
   increment = () => {
     this.setState({
       count: (this.state.count + 1)

@@ -6,8 +6,9 @@ import {
     Link
 } from "react-router-dom";
 import MainPage from './../MainPage'
-import TestPage from './../TestPage'
-
+import { TestComponent } from './../TestPage'
+import './Navbar-top.scss';
+import SimpleMenu from "./../components/menu-component";
 type MyProps = { value: any };
 type MyState = { value: string, count: number };
 export default class NavBarTop extends React.Component<MyProps, MyState> {
@@ -24,18 +25,28 @@ export default class NavBarTop extends React.Component<MyProps, MyState> {
 
     render() {
         return (
-            <Router>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/test">test</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </Router>
+            <div>
+                <SimpleMenu />
+            </div>
         );
     }
+    // render() {
+    //     return (
+    //         <div className="main-container">
+    //             <Router>
+    //                 <Switch>
+    //                     <Route path="/test" component={TestComponent} />
+    //                 </Switch>
+    //                 <nav>
+    //                     <button>
+    //                         <Link to="/">Home</Link>
+    //                     </button>
+    //                     <button>
+    //                         <Link to="/test">test</Link>
+    //                     </button>
+    //                 </nav>
+    //             </Router>
+    //         </div>
+    //     );
+    // }
 }

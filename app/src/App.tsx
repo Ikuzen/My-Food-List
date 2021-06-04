@@ -8,7 +8,17 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import TestPage from './TestPage';
+import {TestComponent} from './TestPage';
+
+// function aHook(){
+//     let a, b, c;
+//     const [item, setItem] = React.useState({})
+//     React.useEffect(function(){
+//         document.body.addEventListener(...);
+//         return () => document.body.removeEventListener(...);
+//     }, [a,b,c]);
+// }
+
 
 class Routes extends React.Component {
     constructor(props) {
@@ -20,11 +30,10 @@ class Routes extends React.Component {
         return (
 
             <div>
-                <Router>
                 <NavBarTop />
+                <Router>
                     <div>
                         <Switch>
-                            <Route path="/test" component={TestPage}/>
                             <Route path="/" component={MainPage}/>
                         </Switch>
                     </div>

@@ -16,3 +16,12 @@ Stack is React/React native/ Express / PostgreSQL
 
 4 - run *npm run dev* (server will run on port 3000)
 
+## Run the Web Application
+
+5 - in the app folder, run *npm run dev*
+
+## Run the Mobile Application
+
+6 - in the app-mobile, run *npm run android*
+
+
